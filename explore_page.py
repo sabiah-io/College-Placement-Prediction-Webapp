@@ -18,7 +18,7 @@ programs = [
 @st.cache
 def load_data():
     # load and clean the data for graphing
-    df = pd.read_csv('data\collegePlace.csv')
+    df = pd.read_csv('collegePlace.csv')
 
     # renaming the engineering programs
     eng = ['Mechanical', 'Electronics And Communication', 'Electrical', 'Civil']
