@@ -17,11 +17,11 @@ programs = [
 backlogs = ['Yes', 'No']
 
 # loading model
-with open('model\model.sav', 'rb') as file:
+with open('model.sav', 'rb') as file:
         data = pickle.load(file)
 
 # loading scaler
-with open('model\scaler.sav', 'rb') as file:
+with open('scaler.sav', 'rb') as file:
     scaler = pickle.load(file)
 
 model = data['model']
