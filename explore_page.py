@@ -45,7 +45,7 @@ def all():
     value2 = [x[0] for x in placed]
     count2 = [x[1] for x in placed]
     fig2 = px.pie(placed, names=['Placed', 'Not placed'], values=count2, color=value2, 
-                hole=0.2, title='Percentage of students placed/not placed')
+                hole=0.5, title='Percentage of students placed/not placed')
 
     # CGPA of students
     counter = Counter(df['CGPA'])
@@ -66,7 +66,7 @@ def graph_program(program):
     value1 = [x[0] for x in gender]
     count1 = [x[1] for x in gender]
     title = "Males and Females who offered {}".format(program)
-    fig1 = px.pie(gender, names=value1, values=count1, color=value1, hole=0.2, title=title)
+    fig1 = px.pie(gender, names=value1, values=count1, color=value1, hole=0.5, title=title)
 
     # {program} students placed/not placed
     counter = Counter(df2['PlacedOrNot'])
@@ -74,7 +74,7 @@ def graph_program(program):
     value2 = [x[0] for x in placed]
     count2 = [x[1] for x in placed]
     fig2 = px.pie(placed, names=['Placed', 'Not placed'], values=count2, color=value2, 
-                hole=0.2, title='Percentage of {} students placed/not placed'.format(program))
+                hole=0.5, title='Percentage of {} students placed/not placed'.format(program))
 
     # CGPA of {program} students
     counter = Counter(df2['CGPA'])
@@ -94,26 +94,26 @@ def explore_graphs():
     if selection == 'All':
         # plotting graphs
         fig1, fig2, count2, fig3, = all()
-        st.plotly_chart(fig1)
-        st.plotly_chart(fig2)
+        st.plotly_chart(fig1, use_container_width=True)
+        st.plotly_chart(fig2, use_container_width=True)
         col1, col2 = st.columns(2)
         col1.metric(label='Placed', value=count2[0])
         col2.metric(label='Not Placed', value=count2[1])
-        st.plotly_chart(fig3)
+        st.plotly_chart(fig3, use_container_width=True)
         col3, col4 = st.columns(2)
         col3.metric(label='Lowest CGPA', value=5)
         col4.metric(label='Highest CGPA', value=9)
     else:
         fig1, count1, fig2, count2, fig3 = graph_program(selection)
-        st.plotly_chart(fig1)
+        st.plotly_chart(fig1, use_container_width=True)
         col1, col2 = st.columns(2)
         col1.metric(label='Male', value=count1[0])
         col2.metric(label='Female', value=count1[1])
-        st.plotly_chart(fig2)
+        st.plotly_chart(fig2, use_container_width=True)
         col3, col4 = st.columns(2)
         col3.metric(label='Placed', value=count2[0])
         col4.metric(label='Not Placed', value=count2[1])
-        st.plotly_chart(fig3)
+        st.plotly_chart(fig3, use_container_width=True)
         df2 = df[df['Stream'] == selection]
         col5, col6 = st.columns(2)
         col5.metric(label='Lowest CGPA', value=int(df2['CGPA'].min()))
