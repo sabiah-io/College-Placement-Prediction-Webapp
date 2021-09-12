@@ -11,7 +11,7 @@ git clone https://github.com/JellyCodes/College-Placement-Prediction-Webapp.git
 
 Now cd into the directory with the _requirements.txt_ file and run the code below to install the necesary modules and libraries
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 After successful installation, while in the directory with the _main.py_ file just run the command below to launch the app 👇
