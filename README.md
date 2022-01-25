@@ -21,4 +21,4 @@ streamlit run main.py
 
 That's basically it. Enjoy 🎉
 
-Made with ❤ JellyCodes
+Made with ❤ JellyCodee
