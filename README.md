@@ -6,7 +6,7 @@ The app was built using a really interesting API called __streamlit__. Streamlit
 
 For code to the project open command line and cd into a directory of your choice and copy and run the command below
 ```
-git clone https://github.com/JellyCodes/College-Placement-Prediction-Webapp.git
+git clone https://github.com/jellyCodee/College-Placement-Prediction-Webapp.git
 ```
 
 Now cd into the directory with the _requirements.txt_ file and run the code below to install the necesary modules and libraries
